@@ -61,7 +61,7 @@ function ready () {
             //console.log('i-' + i);
             let arr_i_href = all[i].querySelector("h4 a").href
             if (last_save == arr_i_href ) {
-                ALREADYREAD = document.getElementById("ALREADYREAD");
+                let ALREADYREAD = document.getElementById("ALREADYREAD");
                 if (!ALREADYREAD) {
                     //console.log('last_save == arr_i_href-');
                     let set = all[i].querySelector(".job-title")
@@ -70,12 +70,12 @@ function ready () {
                 }
             }
             if ( last_save_old==arr_i_href && last_save != last_save_old) {
-                ALREADYREAD = document.getElementById("OLDREAD");
+                let  OLDREAD = document.getElementById("OLDREAD");
                 if (!ALREADYREAD) {
                     //console.log('last_save == arr_i_href-');
                     let set = all[i].querySelector(".job-title")
-                    set.outerHTML = "<h2 id='OLDREAD' style=' width: 100%;  text-align: center; border-bottom: 1px solid #1d4354;  line-height: 0.1em; margin: -20px 0 50px; '>" +
-                        "<span style='color: #61cbfb;background:#fff; padding:0 10px;'>old already read</span></h2> " + set.outerHTML;
+                    set.outerHTML = "<h3 id='OLDREAD' style=' width: 100%;  text-align: center; border-bottom: 1px solid #1d4354;  line-height: 0.1em; margin: -20px 0 50px; '>" +
+                        "<span style='color: #61cbfb;background:#fff; padding:0 10px;'>old already read</span></h3> " + set.outerHTML;
                 }
             }
         }
