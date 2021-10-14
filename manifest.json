@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "UPWORK ALREADY READ",
   "description": "Adds a mark where you last read.",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "permissions": ["storage"],
   "content_scripts": [
     {

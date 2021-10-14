@@ -1,5 +1,22 @@
+//автопрокрутка
+document.getElementById("load-more-button").click();
+    window.addEventListener('scroll', function(e) {
+        let scrollHeight = document.documentElement.scrollHeight;
+        var tallage = 25;
+        var result_Height = scrollHeight / 100 * tallage; //вычисление процентов
+        let need_Height = scrollHeight - result_Height;
+        //console.log(scrollHeight);
+        //console.log(document.documentElement.scrollTop);
+        if (document.documentElement.scrollTop >= need_Height) {
+            document.getElementById("load-more-button").click();
+        }
+    });
 
+    //починаэмо
 ready();
+
+
+
 
 let el_button = document.getElementById("load-more-button");
 if (el_button) {
@@ -11,6 +28,8 @@ if (el_button) {
 }
 
 let check_myStopFunction;
+
+
 
 
 check_myStopFunction = setInterval(function(){
@@ -36,6 +55,7 @@ function load_newer_button () {
     });
 }
 
+
 function ready () {
     console.log('ready');
     setTimeout(function() {
@@ -53,26 +73,37 @@ function ready () {
 
         let all = document.querySelectorAll("section.job-tile");
         localStorage.setItem('last_link', last_link);
-        localStorage.setItem('old_last_link', last_save);
+        if(last_save){
+            if(last_link !=last_save) {
+                localStorage.setItem('old_last_link', last_save);
+            }
+        }
 
+
+
+        //удаляем старые при новом запросе
         let arrayLength = all.length;
+        let  OLDREAD = document.getElementById("OLDREAD");
+        let ALREADYREAD = document.getElementById("ALREADYREAD");
+        if (ALREADYREAD){
+            ALREADYREAD.remove();
+        }
+        if (OLDREAD){
+            OLDREAD.remove();
+        }
+
+
         //console.log('arrayLength-' + arrayLength);
         for (var i = 0; i < arrayLength; i++) {
             //console.log('i-' + i);
             let arr_i_href = all[i].querySelector("h4 a").href
             if (last_save == arr_i_href ) {
-                let ALREADYREAD = document.getElementById("ALREADYREAD");
-                if (!ALREADYREAD) {
-                    //console.log('last_save == arr_i_href-');
                     let set = all[i].querySelector(".job-title")
                     set.outerHTML = "<h2 id='ALREADYREAD' style=' width: 100%;  text-align: center; border-bottom: 1px solid #1d4354;  line-height: 0.1em; margin: -20px 0 50px; '>" +
                         "<span style='color: #14a800;background:#fff; padding:0 10px;'>ALREADY READ</span></h2> " + set.outerHTML;
-                }
             }
             if ( last_save_old==arr_i_href && last_save != last_save_old) {
-                let  OLDREAD = document.getElementById("OLDREAD");
-                if (!ALREADYREAD) {
-                    //console.log('last_save == arr_i_href-');
+                if(last_save !=last_save_old){
                     let set = all[i].querySelector(".job-title")
                     set.outerHTML = "<h3 id='OLDREAD' style=' width: 100%;  text-align: center; border-bottom: 1px solid #1d4354;  line-height: 0.1em; margin: -20px 0 50px; '>" +
                         "<span style='color: #61cbfb;background:#fff; padding:0 10px;'>old already read</span></h3> " + set.outerHTML;
