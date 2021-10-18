@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "UPWORK ALREADY READ",
   "description": "Adds a mark where you last read.",
-  "version": "1.2.1",
-  "permissions": ["storage"],
+  "version": "1.2.2",
+  "permissions": [],
   "content_scripts": [
     {
       "matches": [ "https://www.upwork.com/*"],
