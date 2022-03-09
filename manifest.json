@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "UPWORK ALREADY READ",
-  "description": "Adds a mark where you last read.",
-  "version": "1.2.2",
+  "description": "Adds a mark where you last read. Dark theme",
+  "version": "2.5.5",
   "permissions": [],
   "content_scripts": [
     {
