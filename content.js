@@ -751,7 +751,7 @@ a.upwork-academy, a.upwork-academy:hover {
      border: solid 1px #fff!important;
 }
 .air3-card-section.air3-card-hover:focus-within, .air3-card-section.air3-card-hover:hover {
-    --hoverable-bg: #000000!important;
+
     background-color: #000000!important;
     cursor: pointer;
 }
