@@ -104,7 +104,7 @@ color: #fffff0!important;
     border-radius: 50%;
 }
 .dark-theme #toggle{
-    background-color: #ffffff;
+    background-color: #ffffff!important;
 }
 .dark-theme #toggle:after{
     background-color: transparent;
